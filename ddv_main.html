@@ -1,14 +1,38 @@
 <!DOCTYPE html>
+<script src="//d3js.org/d3.v3.min.js"></script>
+
 <style> .chart rect { fill: steelblue } </style>
 
-<html><body><p>Here are the magic numbers from Lost: 4,8,15,16,23,42</p>
+<html><body>
+<p>Here are the magic numbers from Lost: <span id="data"></span></p>
 
-<svg class="chart" width="500" height="500">
-    <rect width="19" height="40" x="0" y="380"></rect>
-    <rect width="19" height="80" x="20" y="340"></rect>
-    <rect width="19" height="150" x="40" y="270"></rect>
-    <rect width="19" height="160" x="60" y="260"></rect>
-    <rect width="19" height="230" x="80" y="190"></rect>
-    <rect width="19" height="420" x="100" y="0"></rect>
-</svg>
+<svg class="chart"></svg>
+
+<script>
+var width = 120;
+var height = 300;
+
+var data = [4,8,15,16,23,42];
+document.getElementById("data").innerHTML = data;
+
+var x = d3.scale.linear()
+	.domain([0,6])
+    .range([0,width]);
+    
+var y = d3.scale.linear()
+	.domain([0,42])
+    .range([height,0]);
+
+d3.select(".chart")
+	.attr("width",width)
+    .attr("height",height)
+	.selectAll("rect")
+	.data(data)
+    .enter().append("rect")
+    .attr("width",19)
+    .attr("height",function(d) { return height - y(d); })
+    .attr("x",function(d,i) { return x(i); })
+    .attr("y",function(d) { return y(d); });
+</script>
+
 </body></html>
