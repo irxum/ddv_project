@@ -12,7 +12,15 @@
 var width = 120;
 var height = 300;
 
-var data = [4,8,15,16,23,42];
+//var data = [4,8,15,16,23,42];
+var data = d3.csv("https://github.com/irxum/ddv_project/blob/master/DoY_count.csv", function(data) {
+  data.forEach(function(d) {
+    d.population = +d.population;
+    d["land area"] = +d["land area"];
+  });
+  console.log(data[0]);
+});
+	
 document.getElementById("data").innerHTML = data;
 
 var x = d3.scale.linear()
