@@ -38,9 +38,9 @@ d3.select(".chart")
 	.data(data)
     .enter().append("rect")
     .attr("width",19)
-    .attr("height",function(d) { return height - y(d); })
+    .attr("height",function(d) { return height - y(d.count); })
     .attr("x",function(d,i) { return x(i); })
-    .attr("y",function(d) { return y(d); });
+    .attr("y",function(d) { return y(d.count); });
 </script>
 
 </body></html>
