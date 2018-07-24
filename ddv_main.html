@@ -4,7 +4,7 @@
 <style> .chart rect { fill: steelblue } </style>
 
 <html><body>
-<p>Here are the magic numbers from Lost: <span id="data"></span></p>
+<p>Hour of Day <span id="data"></span></p>
 
 <svg class="chart"></svg>
 
@@ -12,7 +12,7 @@
 var width = 120;
 var height = 300;
 
-var data = [4,8,15,16,23,42];
+var crime_timeP = [374, 290, 254, 210, 186, 180, 252, 351, 621, 594, 773, 838, 1248, 1003, 1029, 1050, 946, 876, 807, 695, 658, 523, 481, 453];
 //var data = d3.csv("https://github.com/irxum/ddv_project/blob/master/DoY_count.csv", function(data) {
   //data.forEach(function(d) {
     //d.doy = +d.doy;
@@ -21,15 +21,11 @@ var data = [4,8,15,16,23,42];
   //console.log(data[0]);
 //});
 	
-document.getElementById("data").innerHTML = data;
+document.getElementById("data").innerHTML = crime_timeP;
 
-var x = d3.scale.linear()
-	.domain([0,6])
-    .range([0,width]);
+var x = d3.scale.linear().domain([0,6]).range([0,width]);
     
-var y = d3.scale.linear()
-	.domain([0,42])
-    .range([height,0]);
+var y = d3.scale.linear().domain([0,42]).range([height,0]);
 
 d3.select(".chart")
 	.attr("width",width)
