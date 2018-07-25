@@ -7,7 +7,6 @@ body { font: 12px Arial;}
 
 </style>
 
-/* <style> .chart rect { fill: steelblue } </style> */
 
 <html><body>
 <p>Quarter of Year <span id="data"></span></p>
@@ -37,4 +36,11 @@ d3.select(".chart")
     .attr("y",function(d) { return y(d); });
 </script>
 
+	
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .ticks(4)
+    .tickValues(["Q1", "Q2", "Q3", "Q4"]);
+	
 </body></html>
