@@ -35,7 +35,7 @@ d3.select(".chart")
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
 
-var xAxis = d3.svg.axis()
+var xAxis = d3.select(".chart").axis()
     .scale(x)
     .orient("bottom")
     .ticks(4);
