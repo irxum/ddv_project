@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <script src="//d3js.org/d3.v3.min.js"></script>
 
-<style> .chart rect { fill: steelblue } </style>
+<style> /* set the CSS */
+
+body { font: 12px Arial;}
+
+</style>
+
+//<style> .chart rect { fill: steelblue } </style>
 
 <html><body>
 <p>Quarter of Year <span id="data"></span></p>
@@ -20,12 +26,12 @@ var x = d3.scale.linear().domain([0,4]).range([0,width]);
 var y = d3.scale.linear().domain([0,4000]).range([height,0]);
 
 d3.select(".chart")
-	.attr("width",width)
+    .attr("width",width)
     .attr("height",height)
-	.selectAll("rect")
-	.data(crime_qtrB)
+    .selectAll("rect")
+    .data(crime_qtrB)
     .enter().append("rect")
-    .attr("width",19)
+    .attr("width",25)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
