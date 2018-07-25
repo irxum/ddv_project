@@ -35,15 +35,15 @@ d3.select(".chart")
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
 
-var xAxis = d3.svg.axis()
+var xAxis = d3.select(".chart").axis()
     .scale(x)
     .orient("bottom")
     .ticks(4);
 		
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+d3.select(".chart").append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
 
 </script>
 
