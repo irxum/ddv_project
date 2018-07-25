@@ -4,7 +4,7 @@
 <style> .chart rect { fill: steelblue } </style>
 
 <html><body>
-<p>Quarter of Year<span id="data"></span></p>
+<p>Quarter of Year <span id="data"></span></p>
 
 <svg class="chart"></svg>
 
@@ -15,9 +15,9 @@ var crime_qtrB = [3758, 3741, 3812, 3962];
 	
 document.getElementById("data").innerHTML = crime_qtrB;
 
-var x = d3.scale.linear().domain([0,6]).range([0,width]);
+var x = d3.scale.linear().domain([0,4]).range([0,width]);
     
-var y = d3.scale.linear().domain([0,42]).range([height,0]);
+var y = d3.scale.linear().domain([0,30000]).range([height,0]);
 
 d3.select(".chart")
 	.attr("width",width)
