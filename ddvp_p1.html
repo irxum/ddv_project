@@ -28,9 +28,11 @@ var height = 400;
 
 var crime_qtrB = [3758, 3741, 3812, 3962];
 document.getElementById("data").innerHTML = crime_qtrB;
+	
+var qtrs = [1, 2, 3, 4];
 
 var x = d3.scale.ordinal()
-	.domain([1,2,3,4])
+	.domain(qtrs)
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
@@ -58,7 +60,7 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     .ticks(1)
-    .tickValues([1,2,3,4]);
+    .tickValues(qtrs);
 
 var yAxis = d3.svg.axis()
     .scale(y)
