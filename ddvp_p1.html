@@ -26,8 +26,8 @@ var margin = 50;
 var width = 600;
 var height = 400;
 
-var data = [3758, 3741, 3812, 3962];
-document.getElementById("data").innerHTML = data;
+var crime_qtrB = [3758, 3741, 3812, 3962];
+document.getElementById("data").innerHTML = crime_qtrB;
 
 var x = d3.scale.ordinal()
 	.domain([0,1,2,3])
@@ -47,7 +47,7 @@ chart.attr("width",width + 2*margin)
     .append("g")
         .attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
-	.data(data)
+	.data(crime_qtrB)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
