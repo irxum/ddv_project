@@ -133,11 +133,20 @@ chart.append("text")
 // add y-axis label
 //    .attr("transform", "rotate(90)")
 chart.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 6)
+    .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .attr("x", 0 - margin/2)
-    .attr("y", 0 - height/2)
-    .style("text-anchor", "middle")
-    .text("Number of Recorded Crimes");
+    .text("Number of Recorded Crimes");	
+	
+	
+	
+    //.attr("transform", "rotate(-90)")
+    //.attr("x", 0 - margin/2)
+    //.attr("y", 0 - height/2)
+    //.style("text-anchor", "middle")
+    //.text("Number of Recorded Crimes");
 
 	
 </script>
