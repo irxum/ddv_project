@@ -39,7 +39,7 @@ var y = d3.scale.linear()
 
 var chart = d3.select(".chart");
 
-var bar_width = (width / crime_qtrB.length);
+var bar_width = ((width / crime_qtrB.length) - 10);
 	
 	
 chart.attr("width",width + 2*margin)
