@@ -60,8 +60,8 @@ chart.attr("width",width + 2*margin)
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
 	
-chart.selectAll("g")
-    .selectAll("rect")
+chart.select("g")
+    .select("rect")
 	.data(crime_qtrS)
     .enter().append("rect")
     .attr("width", bar_width)
