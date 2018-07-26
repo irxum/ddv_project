@@ -56,6 +56,14 @@ chart.attr("width",width + 2*margin)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
+	
+chart.select("rect")
+	.data(crime_qtrS)
+    .enter().append("rect")
+    .attr("width", bar_width)
+    .attr("height",function(d) { return height - y(d); })
+    .attr("x",function(d,i) { return x(i+1); })
+    .attr("y",function(d,i) { return y(crime_qtrS[i]); });
 
 	
 var xAxis = d3.svg.axis()
