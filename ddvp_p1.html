@@ -61,7 +61,8 @@ chart.attr("width",width + 2*margin)
     .attr("y",function(d) { return y(d); });
 	
 chart2.attr("width",width + 2*margin)
-    .attr("height", - height - 2*margin)
+    .attr("height", height + 2*margin)
+    .attr("x", -height)
     .append("g")
         .attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
