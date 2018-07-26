@@ -118,13 +118,13 @@ legend.append("rect")
     .style("fill", z);
 
 legend.append("text")
-    .attr("x", width - 24)
+    .attr("x", width + margin - 24)
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
 	
 chart.append("text")
-    .attr("x", (width + margin) / 2))
+    .attr("x", (width + margin) / 2)
     .attr("y", (margin / 2))
     .style("text-anchor", "middle")
     .text("Quarter");
