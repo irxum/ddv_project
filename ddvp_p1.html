@@ -133,8 +133,9 @@ chart.append("text")
 // add y-axis label
 //    .attr("transform", "rotate(90)")
 chart.append("text")
-    .attr("x", margin)
-    .attr("y", margin)
+    .attr("transform", "rotate(-90)")
+    .attr("x", 0 - margin/2)
+    .attr("y", 0 - height/2)
     .style("text-anchor", "middle")
     .text("Number of Recorded Crimes");
 
