@@ -61,7 +61,7 @@ chart.attr("width",width + 2*margin)
     .attr("y",function(d) { return y(d); });
 	
 chart.selectAll("g")
-    .select("rect")
+    .selectAll("rect")
 	.data(crime_qtrS)
     .enter().append("rect")
     .attr("width", bar_width)
