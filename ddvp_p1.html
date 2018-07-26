@@ -2,7 +2,6 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 
 <style>
-.chart rect { fill: springgreen }
 .axis path,
 .axis line {
     fill: none;
@@ -52,6 +51,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(crime_qtrB)
     .enter().append("rect")
+    .attr("fill", springgreen)
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
@@ -65,6 +65,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(crime_qtrS)
     .enter().append("rect")
+    .attr("fill", slategrey)
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
