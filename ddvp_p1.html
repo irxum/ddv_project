@@ -18,6 +18,8 @@
 
 <html><body>
 <p> Stolen Vehicles and Burglaries per Quarter <span id="data"></span></p>
+	<p></p>
+	<p></p>
 
 <svg class="chart"></svg>
 <svg class="chart2"></svg>
@@ -69,7 +71,7 @@ chart.append("g")
     .attr("height",function(d, i) { return (height - y(d)); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d,i) { return y(d + (crime_qtrB[i])); })
-    .style("fill", "green");
+    .style("fill", "orange");
 
 	
 var xAxis = d3.svg.axis()
@@ -95,7 +97,7 @@ chart.append("g")
 	
 
 var z = d3.scale.ordinal()
-    .range(["green", "steelblue"]);
+    .range(["orange", "steelblue"]);
 
 var cnames = ["Stolen Vehicles", "Burglaries"];
 	
