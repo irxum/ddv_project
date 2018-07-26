@@ -111,7 +111,7 @@ var legend = chart.append("g")
     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
 legend.append("rect")
-    .attr("x", width - 19)
+    .attr("x", width + margin - 19)
     .attr("width", 19)
     .attr("height", 19)
     .style("fill", z);
