@@ -126,15 +126,15 @@ legend.append("text")
 // add x-axis label
 chart.append("text")
     .attr("x", (width/2) + margin)
-    .attr("y", height + margin)
+    .attr("y", height + 1.5*margin)
     .style("text-anchor", "middle")
     .text("Quarter");
 
 // add y-axis label
 chart.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("x", (margin / 2))
-    .attr("y", (height/2) + margin)
+    .attr("x", (height/2) + margin)
+    .attr("y", (margin/2))
     .style("text-anchor", "middle")
     .text("Number of Recorded Crimes");
 
