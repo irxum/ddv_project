@@ -66,7 +66,7 @@ chart.append("g")
 	.data(crime_qtrS)
     .enter().append("rect")
     .attr("width", bar_width)
-    .attr("height",function(d, i) { return (height + y(d)); })
+    .attr("height",function(d, i) { return (height + y(d) + crime_qtrB[i]); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d,i) { return y(d); })
     .style("fill", "green");
