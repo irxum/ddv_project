@@ -26,7 +26,6 @@
 	<p><br></p>
 
 <svg class="chart"></svg>
-<svg class="chart2"></svg>
 
 <script>
 var margin = 100;
@@ -48,7 +47,6 @@ var y = d3.scale.linear()
     .range([height,0]);
 
 var chart = d3.select(".chart");
-var chart2 = d3.select(".chart2");
 
 var bar_width = ((width / crime_qtrB.length) - 10);
 	
@@ -124,6 +122,13 @@ legend.append("text")
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
+	
+chart.append("text")
+    .attr("x", (width + margin) / 2))
+    .attr("y", (margin / 2))
+    .style("text-anchor", "middle")
+    .text("Quarter");
+
 	
 </script>
 
