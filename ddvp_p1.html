@@ -92,6 +92,34 @@ chart.append("g")
     .attr("transform", "translate(" + margin + "," + margin + ")")
     .attr("class","axis")
     .call(yAxis);
+	
+
+var z = d3.scaleOrdinal()
+    .range(["green", "steelblue"]);
+
+var cnames = ["Stolen Vehicles", "Burglaries"];
+	
+var legend = chart.append("g")
+    .attr("font-family", "sans-serif")
+    .attr("font-size", 12)
+    .attr("text-anchor", "end")
+    .selectAll("g")
+    .data(cnames)
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+legend.append("rect")
+    .attr("x", width - 19)
+    .attr("width", 19)
+    .attr("height", 19)
+    .attr("fill", z);
+
+legend.append("text")
+    .attr("x", width - 24)
+    .attr("y", 9.5)
+    .attr("dy", "0.32em")
+    .text(function(d) { return d; });
+	
 </script>
 
 </body></html>
