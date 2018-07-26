@@ -2,7 +2,7 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 
 <style>
-.chart rect { fill: steelblue }
+.chart rect { fill: green }
 .axis path,
 .axis line {
     fill: none;
@@ -12,7 +12,7 @@
 
 .axis text {
     font-family: sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 </style>
 
@@ -26,8 +26,8 @@ var margin = 50;
 var width = 600;
 var height = 400;
 
-var data = [3758, 3741, 3812, 3962];
-document.getElementById("data").innerHTML = data;
+var crime_qtrB = [3758, 3741, 3812, 3962];
+document.getElementById("data").innerHTML = crime_qtrB;
 
 var x = d3.scale.ordinal()
 	.domain([1,2,3,4])
@@ -46,7 +46,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(data)
     .enter().append("rect")
-    .attr("width", 149)
+    .attr("width", (width/crime_qtrB.length - 1))
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
