@@ -68,7 +68,7 @@ chart.append("g")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
-    .attr("y",function(d,i) { return y(d); })
+    .attr("y",function(d,i) { return y(crime_qtrB[i]); })
     .style("fill", "green");
 
 	
