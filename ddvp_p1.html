@@ -59,20 +59,6 @@ chart.attr("width",width + 2*margin)
     .attr("y",function(d) { return y(d); });
 
 	
-chart.attr("width",width + 2*margin)
-    .attr("height",height + 2*margin)
-    .append("g")
-        .attr("transform","translate(" + margin + "," + margin + ")")
-    .selectAll("rect")
-	.data(crime_qtrS)
-    .enter().append("rect")
-    .attr("fill", slategrey)
-    .attr("width", bar_width)
-    .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return x(i+1); })
-    .attr("y",function(d,i) { return crime_qtrB[i]; });
-
-	
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
