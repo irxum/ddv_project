@@ -39,6 +39,9 @@ var y = d3.scale.linear()
 
 var chart = d3.select(".chart");
 
+var bar_width = 140;
+	
+	
 chart.attr("width",width + 2*margin)
     .attr("height",height + 2*margin)
     .append("g")
@@ -46,7 +49,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(data)
     .enter().append("rect")
-    .attr("width",149)
+    .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
