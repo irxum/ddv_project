@@ -46,7 +46,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(data)
     .enter().append("rect")
-    .attr("width", function(d) { return (width / crime_qtrB.length - 1): })
+    .attr("width", function(d) { return (width / crime_qtrB.length - 1); })
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i); })
     .attr("y",function(d) { return y(d); });
