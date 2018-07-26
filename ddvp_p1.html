@@ -30,7 +30,7 @@ var crime_qtrB = [3758, 3741, 3812, 3962];
 document.getElementById("data").innerHTML = crime_qtrB;
 
 var x = d3.scale.ordinal()
-	.domain([0,1,2,3])
+	.domain([1,2,3,4])
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
@@ -51,7 +51,7 @@ chart.attr("width",width + 2*margin)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return x(i); })
+    .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
 
 var xAxis = d3.svg.axis()
