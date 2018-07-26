@@ -12,7 +12,7 @@
 
 .axis text {
     font-family: sans-serif;
-    font-size: 11px;
+    font-size: 12px;
 }
 </style>
 
@@ -37,7 +37,7 @@ var x = d3.scale.ordinal()
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
-	.domain([0,4000])
+	.domain([0,10000])
     .range([height,0]);
 
 var chart = d3.select(".chart");
@@ -57,6 +57,20 @@ chart.attr("width",width + 2*margin)
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
 
+	
+chart.attr("width",width + 2*margin)
+    .attr("height",height + 2*margin)
+    .append("g")
+        .attr("transform","translate(" + margin + "," + margin + ")")
+    .selectAll("rect")
+	.data(crime_qtrS)
+    .enter().append("rect")
+    .attr("width", bar_width)
+    .attr("height",function(d) { return height - y(d); })
+    .attr("x",function(d,i) { return x(i+1); })
+    .attr("y",function(d,i) { return crime_qtrB[i]; });
+
+	
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
