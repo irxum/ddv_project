@@ -54,7 +54,8 @@ var y = d3.scale.linear()
 	.domain([0,2400])
     .range([height,0]);
 var chart = d3.select(".chart");
-var bar_width = ((width / crime_hodB.length) - 10);
+var gap = 10;
+var bar_width = ((width / crime_hodB.length) - gap);
 	
 	
 chart.attr("width",width + 2*margin)
@@ -64,9 +65,10 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(crime_hodB)
     .enter().append("rect")
+	.attr("transform","translate(" + gap + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return ((bar_width*i)+10); })
+    .attr("x",function(d,i) { return ((bar_width*i)); })
     .attr("y",function(d) { return y(d); });
 	
 chart.append("g")
