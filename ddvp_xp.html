@@ -107,7 +107,7 @@ var x = d3.scale.ordinal()
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
-	.domain([0,10000])
+	.domain([0,6000])
     .range([height,0]);
 var chart = d3.select("#chart1");
 var bar_width = ((width / crime_qtrB.length) - 10);
@@ -125,17 +125,6 @@ chart.attr("width",width + 2*margin)
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
 	
-chart.append("g")
-        .attr("transform","translate(" + margin + "," + margin + ")")
-    .selectAll("rect")
-	.data(crime_qtrS)
-    .enter().append("rect")
-    .attr("width", bar_width)
-    .attr("height",function(d, i) { return (height - y(d)); })
-    .attr("x",function(d,i) { return x(i+1); })
-    .attr("y",function(d,i) { return y(d + (crime_qtrB[i])); })
-    .style("fill", "orange");
-	
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
@@ -145,6 +134,7 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
     .ticks(5);
+	
 chart.append("g")
     .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
     .attr("class","axis")
@@ -180,20 +170,20 @@ chart.append("text")
 
 // ***************************
 // 2nd chart stuff
-var chart2 = d3.select("#chart2")
-            .attr("width", width)
-            .attr("height", height)
-            .append("g")
-            .attr("transform", "translate("+margin+width+","+margin+")");
-
-chart2.selectAll("rect").data(crime_qtrB)
-	    .enter().append("rect")
+var chart2 = d3.select("#chart2");
+	
+chart2.attr("width",width + 2*margin)
+    .attr("height",height + 2*margin)
+    .append("g")
+        .attr("transform","translate(" + margin + "," + margin + ")")
+    .selectAll("rect")
+	.data(crime_qtrS)
+    .enter().append("rect")
     .attr("width", bar_width)
-    .attr("height",function(d, i) { return (height - y(d)); })
+    .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
-    .attr("y",function(d,i) { return y(d); })
-    .style("fill", "orange");;
-
+    .attr("y",function(d) { return y(d); });
+	
 // ***************************
 
 	
