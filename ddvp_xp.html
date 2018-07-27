@@ -196,11 +196,11 @@ chart2.selectAll("rect").data(crime_qtrB)
 	
 // ***************************
 // radio button stuff
-var timeout = d3.timeout(function() {
-  d3.select("input[value=\"sv\"]")
-      .property("checked", true)
-      .dispatch("change");
-}, 2000);
+//var timeout = d3.timeout(function() {
+  //d3.select("input[value=\"sv\"]")
+    //  .property("checked", true)
+      //.dispatch("change");
+//}, 2000);
 	
 function changed() {
   timeout.stop();
@@ -210,12 +210,10 @@ function changed() {
 
 function transitionSV() {
   y.domain([0, yMax]);
-
 }
 
 function transitionBU() {
   y.domain([0, y1Max]);
-
 
 }
 // ***************************
