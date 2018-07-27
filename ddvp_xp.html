@@ -172,14 +172,24 @@ chart.append("text")
     .attr("transform", "rotate(-90)")
     .style("font-size", "12px")
     .text("Number of Recorded Crimes");	
+// ***************************
+	
 
 // ***************************
 // 2nd chart stuff
-var chart2 = d3.select(id).append("svg")
+var chart2 = d3.selectAll("svg").append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
             .attr("transform", "translate("+margin+width+","+margin+")");
+
+chart2.selectAll("rect").data(crime_qtrB)
+	    .enter().append("rect")
+    .attr("width", bar_width)
+    .attr("height",function(d, i) { return (height - y(d)); })
+    .attr("x",function(d,i) { return x(i+1); })
+    .attr("y",function(d,i) { return y(d); })
+    .style("fill", "orange");;
 
 // ***************************
 
