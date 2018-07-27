@@ -21,8 +21,8 @@
 <html><body>
 <body style='font-family="sans-serif"'>
 <p> Stolen Vehicles and Burglaries by Day of Week</p>
-<p><font size="1"> The data below shows the aggregated number <br>
-of property crimes in Los Angeles County <br>
+<p><font size="2"> The data below shows the aggregated number <br>
+of property crimes (Stolen Vehicles and Burglaries) in Los Angeles County <br>
 in the year of 2017 by day of week. </p>
 
 </font> 
@@ -30,7 +30,7 @@ in the year of 2017 by day of week. </p>
 	<p><br></p>
 
 
-<button onclick="location.href = 'www.yoursite.com';" id="nextButton" class="float-left submit-button" >Next - Hour of Day View</button>
+<button onclick="location.href = '/ddv_project/ddvp_p3.html';" id="nextButton" class="float-left submit-button" >Next - Hour of Day View</button>
 
 <svg class="chart"></svg>
 
@@ -80,7 +80,7 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     .ticks(1)
-    .tickValues(qtrs);
+    .tickValues(dows);
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
