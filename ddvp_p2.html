@@ -49,7 +49,8 @@ var y = d3.scale.linear()
 	.domain([0,6000])
     .range([height,0]);
 var chart = d3.select(".chart");
-var bar_width = ((width / crime_dowB.length) - 10);
+var gap = 10
+var bar_width = ((width / crime_dowB.length) - gap);
 	
 	
 chart.attr("width",width + 2*margin)
@@ -59,6 +60,7 @@ chart.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(crime_dowB)
     .enter().append("rect")
+	.attr("transform","translate(" + (gap/2) + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return ((bar_width+10)*i); })
@@ -69,6 +71,7 @@ chart.append("g")
     .selectAll("rect")
 	.data(crime_dowS)
     .enter().append("rect")
+	.attr("transform","translate(" + (gap/2) + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d, i) { return (height - y(d)); })
     .attr("x",function(d,i) { return ((bar_width+10)*i); })
