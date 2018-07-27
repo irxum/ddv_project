@@ -2,7 +2,10 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 
 <style>
-.chart rect { fill: steelblue }
+.chart rect { 
+	fill: steelblue;
+	float: left;
+}
 .axis path,
 .axis line {
     fill: none;
@@ -81,7 +84,7 @@ in the year of 2017 </p>
   <label><input type="radio" name="mode" value="bu" checked>Burglaries</label>
 </form>
 
-<svg class="chart"></svg>
+<svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
   <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
@@ -106,7 +109,7 @@ var x = d3.scale.ordinal()
 var y = d3.scale.linear()
 	.domain([0,10000])
     .range([height,0]);
-var chart = d3.select(".chart");
+var chart = d3.select("#chart1");
 var bar_width = ((width / crime_qtrB.length) - 10);
 	
 	
@@ -177,7 +180,7 @@ chart.append("text")
 
 // ***************************
 // 2nd chart stuff
-var chart2 = d3.select("body").append("svg")
+var chart2 = d3.select("#chart2")
             .attr("width", width)
             .attr("height", height)
             .append("g")
