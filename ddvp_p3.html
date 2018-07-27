@@ -54,7 +54,7 @@ var y = d3.scale.linear()
 	.domain([0,2400])
     .range([height,0]);
 var chart = d3.select(".chart");
-var bar_width = ((width / crime_hodB.length) - 5);
+var bar_width = ((width / crime_hodB.length) - 10);
 	
 	
 chart.attr("width",width + 2*margin)
@@ -66,7 +66,7 @@ chart.attr("width",width + 2*margin)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return ((bar_width*i)+5); })
+    .attr("x",function(d,i) { return ((bar_width*i)+10); })
     .attr("y",function(d) { return y(d); });
 	
 chart.append("g")
@@ -76,7 +76,7 @@ chart.append("g")
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d, i) { return (height - y(d)); })
-    .attr("x",function(d,i) { return ((bar_width*i)+5); })
+    .attr("x",function(d,i) { return ((bar_width*i)+10); })
     .attr("y",function(d,i) { return y(d + (crime_hodB[i])); })
     .style("fill", "orange");
 	
