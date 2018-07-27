@@ -173,7 +173,18 @@ chart.append("text")
     .style("font-size", "12px")
     .text("Number of Recorded Crimes");	
 
+// ***************************
+// 2nd chart stuff
+var chart2 = d3.select(id).append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate("+margin+width+","+margin+")");
+
+// ***************************
+
 	
+// ***************************
 // radio button stuff
 var timeout = d3.timeout(function() {
   d3.select("input[value=\"sv\"]")
@@ -197,6 +208,7 @@ function transitionBU() {
 
 
 }
+// ***************************
 
 	
 // slider stuff
