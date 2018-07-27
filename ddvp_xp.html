@@ -97,6 +97,8 @@ in the year of 2017 </p>
 var margin = 70;
 var width = 400;
 var height = 250;
+var gap1 = 8;
+var gap2 = 4;
 var crime_qtrB = [3758, 3741, 3812, 3962];
 var crime_qtrS = [4830, 4601, 4656, 4818];
 //document.getElementById("data").innerHTML = crime_qtrB;
@@ -110,8 +112,7 @@ var y = d3.scale.linear()
 	.domain([0,6000])
     .range([height,0]);
 var chart = d3.select("#chart1");
-var bar_width = ((width / crime_qtrB.length) - 10);
-	
+var bar_width = ((width / crime_qtrB.length) - gap1);
 	
 chart.attr("width",width + 2*margin)
     .attr("height",height + 2*margin)
@@ -165,6 +166,18 @@ chart.append("text")
     .attr("transform", "rotate(-90)")
     .style("font-size", "12px")
     .text("Number of Recorded Crimes");	
+
+	
+chart.append("g")
+    .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
+    .attr("class","axis")
+    .call(xAxis);
+    
+chart.append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")")
+    .attr("class","axis")
+    .call(yAxis);
+	
 // ***************************
 	
 
