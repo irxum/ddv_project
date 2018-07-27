@@ -38,25 +38,25 @@ var margin = 100;
 var width = 600;
 var height = 400;
 
-var crime_dowB = [443, 376, 503, 525, 482, 408, 398, 568, 770, 706, 720, 666, 998, \
-615, 691, 703, 777, 881, 926, 711, 687, 629, 600, 448];
+var crime_hodB = [443, 376, 503, 525, 482, 408, 398, 568, 770, 706, 720, 666, 998,
+                  615, 691, 703, 777, 881, 926, 711, 687, 629, 600, 448];
 
-var crime_dowS = [593, 526, 419, 332, 270, 361, 471, 520, 601, 504, 594, 482, 824, \
-532, 621, 792, 878, 1156, 1413, 1431, 1420, 1469, 1486, 1116];
+var crime_hodS = [593, 526, 419, 332, 270, 361, 471, 520, 601, 504, 594, 482, 824, 
+                  532, 621, 792, 878, 1156, 1413, 1431, 1420, 1469, 1486, 1116];
 	
-var dows = ["0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", \
-"9:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00", "17:00", "18:00", \
-"19:00", "20:00","21:00","22:00","23:00"];
+var hods = ["0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", 
+            "9:00", "10:00","11:00","12:00","13:00","14:00","15:00","16:00", "17:00", "18:00",
+            "19:00", "20:00","21:00","22:00","23:00"];
 
 var x = d3.scale.ordinal()
-	.domain(dows)
+	.domain(hods)
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
 	.domain([0,2400])
     .range([height,0]);
 var chart = d3.select(".chart");
-var bar_width = ((width / crime_dowB.length) - 10);
+var bar_width = ((width / crime_hodB.length) - 10);
 	
 	
 chart.attr("width",width + 2*margin)
@@ -64,7 +64,7 @@ chart.attr("width",width + 2*margin)
     .append("g")
 	.attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
-	.data(crime_dowB)
+	.data(crime_hodB)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
@@ -74,19 +74,19 @@ chart.attr("width",width + 2*margin)
 chart.append("g")
 	.attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
-	.data(crime_dowS)
+	.data(crime_hodS)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d, i) { return (height - y(d)); })
     .attr("x",function(d,i) { return ((bar_width+10)*i); })
-    .attr("y",function(d,i) { return y(d + (crime_dowB[i])); })
+    .attr("y",function(d,i) { return y(d + (crime_hodB[i])); })
     .style("fill", "orange");
 	
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     .ticks(1)
-    .tickValues(dows);
+    .tickValues(hods);
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
