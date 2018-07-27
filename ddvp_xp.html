@@ -35,7 +35,7 @@ in the year of 2017 </p>
 	<p><br></p>
 
 <form>
-  <label><input type="radio" name="mode" value="sv">Stolen Vehicles</label><br>
+  <label><input type="radio" name="mode" value="sv">Stolen Vehicles</label><br><br>
   <label><input type="radio" name="mode" value="bu" checked>Burglaries</label>
 </form>
 
@@ -107,24 +107,6 @@ var z = d3.scale.ordinal()
     .range(["orange", "steelblue"]);
 var cnames = ["Stolen Vehicles", "Burglaries"];
 	
-var legend = chart.append("g")
-    .attr("font-family", "sans-serif")
-    .attr("font-size", 12)
-    .attr("text-anchor", "end")
-    .selectAll("g")
-    .data(cnames)
-    .enter().append("g")
-    .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-legend.append("rect")
-    .attr("x", width + margin - 19)
-    .attr("width", 19)
-    .attr("height", 19)
-    .style("fill", z);
-legend.append("text")
-    .attr("x", width + margin - 24)
-    .attr("y", 9.5)
-    .attr("dy", "0.32em")
-    .text(function(d) { return d; });
 // add x-axis label
 chart.append("text")
     .attr("x", (width/2) + margin)
