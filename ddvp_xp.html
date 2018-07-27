@@ -146,9 +146,9 @@ chart.append("g")
     .attr("class","axis")
     .call(yAxis);
 	
-var z = d3.scale.ordinal()
-    .range(["orange", "steelblue"]);
-var cnames = ["Stolen Vehicles", "Burglaries"];
+//var z = d3.scale.ordinal()
+  //  .range(["orange", "steelblue"]);
+//var cnames = ["Stolen Vehicles", "Burglaries"];
 	
 // add x-axis label
 chart.append("text")
@@ -167,17 +167,7 @@ chart.append("text")
     .style("font-size", "12px")
     .text("Number of Recorded Crimes");	
 
-	
-chart2.append("g")
-    .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
-    .attr("class","axis")
-    .call(xAxis);
-    
-chart2.append("g")
-    .attr("transform", "translate(" + margin + "," + margin + ")")
-    .attr("class","axis")
-    .call(yAxis);
-	
+
 // ***************************
 	
 
@@ -196,6 +186,33 @@ chart2.attr("width",width + 2*margin)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
+
+	
+chart2.append("g")
+    .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
+    .attr("class","axis")
+    .call(xAxis);
+    
+chart2.append("g")
+    .attr("transform", "translate(" + margin + "," + margin + ")")
+    .attr("class","axis")
+    .call(yAxis);
+
+// add x-axis label
+chart2.append("text")
+    .attr("x", (width/2) + margin)
+    .attr("y", height + 1.5*margin)
+    .style("font-size", "12px")
+    .style("text-anchor", "middle")
+    .text("Quarter of Year");
+// add y-axis label
+chart2.append("text")
+    .attr("text-anchor", "middle")
+    .attr("y", margin/4)
+    .attr("x", 0 - ((height/2) + margin))
+    .attr("transform", "rotate(-90)")
+    .style("font-size", "12px")
+    .text("Number of Recorded Crimes");	
 	
 // ***************************
 
