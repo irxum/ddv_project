@@ -160,7 +160,7 @@ var cnames = ["Stolen Vehicles", "Burglaries"];
 chart.append("text")
     .attr("x", (width/2) + margin)
     .attr("y", height + 1.5*margin)
-    .style("fontSize": 11)
+    .style("font-size": "11px")
     .style("text-anchor", "middle")
     .text("Quarter of Year");
 // add y-axis label
@@ -170,8 +170,34 @@ chart.append("text")
     .attr("y", margin/4)
     .attr("x", 0 - ((height/2) + margin))
     .attr("transform", "rotate(-90)")
-    .style("fontSize", 11)
+    .style("font-size", "11px")
     .text("Number of Recorded Crimes");	
+
+	
+// radio button stuff
+var timeout = d3.timeout(function() {
+  d3.select("input[value=\"sv\"]")
+      .property("checked", true)
+      .dispatch("change");
+}, 2000);
+	
+function changed() {
+  timeout.stop();
+  if (this.value === "sv") transitionSV();
+  else transitionBU();
+}
+
+function transitionSV() {
+  y.domain([0, yMax]);
+
+}
+
+function transitionBU() {
+  y.domain([0, y1Max]);
+
+
+}
+
 	
 // slider stuff
 var slider = document.getElementById("myRange");
@@ -182,6 +208,9 @@ var output = document.getElementById("slideVal");
 slider.oninput = function() {
     output.innerHTML = this.value;
 } 
+
+
+
 
 
 </script>
