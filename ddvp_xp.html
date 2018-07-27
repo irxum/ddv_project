@@ -11,7 +11,7 @@
 }
 .axis text {
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 11px;
 }
 * {
   font-family: sans-serif;
@@ -87,13 +87,13 @@ in the year of 2017 </p>
   <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
 </div>
 <p><font size="3"> Select Quarter by moving Slider</p>
-<div id="slideVal"> 1 </div>
+<div id="slideVal"> 1 </div><font><br><br>	
 
 
 <script>
 var margin = 50;
-var width = 300;
-var height = 200;
+var width = 400;
+var height = 250;
 var crime_qtrB = [3758, 3741, 3812, 3962];
 var crime_qtrS = [4830, 4601, 4656, 4818];
 //document.getElementById("data").innerHTML = crime_qtrB;
@@ -182,7 +182,10 @@ slider.oninput = function() {
 } 
 
 
-	
 </script>
+	
+	
 <button onclick="location.href = '/ddv_project/ddvp_p1.html';" id="myButton" class="float-right submit-button" >Back to Beginning</button>
-</body></html>
+
+</body>
+</html>
