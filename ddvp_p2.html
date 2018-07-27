@@ -61,7 +61,7 @@ chart.attr("width",width + 2*margin)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return x(i+1); })
+    .attr("x",function(d,i) { return bar_width*i; })
     .attr("y",function(d) { return y(d); });
 	
 chart.append("g")
@@ -71,7 +71,7 @@ chart.append("g")
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d, i) { return (height - y(d)); })
-    .attr("x",function(d,i) { return x(i+1); })
+    .attr("x",function(d,i) { return bar_width*i; })
     .attr("y",function(d,i) { return y(d + (crime_dowB[i])); })
     .style("fill", "orange");
 	
