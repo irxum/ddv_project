@@ -91,7 +91,7 @@ in the year of 2017 </p>
 
 
 <script>
-var margin = 50;
+var margin = 70;
 var width = 400;
 var height = 250;
 var crime_qtrB = [3758, 3741, 3812, 3962];
@@ -160,6 +160,7 @@ var cnames = ["Stolen Vehicles", "Burglaries"];
 chart.append("text")
     .attr("x", (width/2) + margin)
     .attr("y", height + 1.5*margin)
+    .attr("fontsize": 11)
     .style("text-anchor", "middle")
     .text("Quarter of Year");
 // add y-axis label
@@ -169,6 +170,7 @@ chart.append("text")
     .attr("y", margin/4)
     .attr("x", 0 - ((height/2) + margin))
     .attr("transform", "rotate(-90)")
+    .attr("fontsize", 11)
     .text("Number of Recorded Crimes");	
 	
 // slider stuff
