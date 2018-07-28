@@ -236,11 +236,13 @@ function transitionSV() {
   chart.selectAll("rect")
 	.data(crime_qtrS)
 	.attr("height",function(d) { return height - y(d); })
+	.attr("y",function(d) { return y(d); })
 	.style("fill", "orange");
 	
   chart2.selectAll("rect")
 	.data(crime_qtrS)
 	.attr("height",function(d) { return height - y(d); })
+	.attr("y",function(d) { return y(d); })
 	.style("fill", "orange");
 }
 
@@ -249,11 +251,13 @@ function transitionBU() {
   chart.selectAll("rect")
 	.data(crime_qtrB)
 	.attr("height",function(d) { return height - y(d); })
+	.attr("y",function(d) { return y(d); })
 	.style("fill", "steelblue");
 
   chart2.selectAll("rect")
 	.data(crime_qtrB)
 	.attr("height",function(d) { return height - y(d); })
+	.attr("y",function(d) { return y(d); })
 	.style("fill", "steelblue");
 
 }
