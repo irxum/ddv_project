@@ -146,9 +146,6 @@ chart.append("g")
     .attr("class","axis")
     .call(yAxis);
 	
-//var z = d3.scale.ordinal()
-  //  .range(["orange", "steelblue"]);
-//var cnames = ["Stolen Vehicles", "Burglaries"];
 	
 // add x-axis label
 chart.append("text")
@@ -233,14 +230,14 @@ function changed() {
 function transitionSV() {
   y.domain([0, yMax]);
   
-  chart1.selectAll("rect")
+  chart.selectAll("rect")
 	.style("fill", "orange");
 }
 
 function transitionBU() {
   y.domain([0, y1Max]);
 
-  chart1.selectAll("rect")
+  chart.selectAll("rect")
 	.style("fill", "steelblue");
 
 }
