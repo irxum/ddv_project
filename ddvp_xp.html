@@ -120,8 +120,8 @@ chart.attr("width",width + 2*margin)
         .attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
 	.data(crime_qtrB)
-	.attr("transform","translate(" + (gap1/2) + ", " + 0 + ")")
     .enter().append("rect")
+	.attr("transform","translate(" + (gap1/2) + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return ((bar_width+gap1)*i); })
@@ -185,7 +185,6 @@ chart2.attr("width",width + 2*margin)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
-
 	
 chart2.append("g")
     .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
@@ -218,11 +217,6 @@ chart2.append("text")
 	
 // ***************************
 // radio button stuff
-//var timeout = d3.timeout(function() {
-  //d3.select("input[value=\"sv\"]")
-    //  .property("checked", true)
-      //.dispatch("change");
-//}, 2000);
 	
 d3.selectAll("input")
     .on("change", changed);
