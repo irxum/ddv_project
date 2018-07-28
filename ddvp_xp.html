@@ -120,6 +120,7 @@ chart.attr("width",width + 2*margin)
         .attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
 	.data(crime_qtrB)
+	.attr("transform","translate(" + (gap1/2) + ", " + 0 + ")")
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
@@ -223,6 +224,8 @@ chart2.append("text")
       //.dispatch("change");
 //}, 2000);
 	
+d3.selectAll("input")
+    .on("change", changed);
 function changed() {
   if (this.value === "sv") transitionSV();
   else transitionBU();
