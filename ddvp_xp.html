@@ -179,6 +179,7 @@ chart2.attr("width",width + 2*margin)
     .selectAll("rect")
 	.data(crime_qtrS)
     .enter().append("rect")
+	.attr("transform","translate(" + (gap1/2) + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
@@ -228,16 +229,16 @@ function changed() {
 }
 
 function transitionSV() {
-  y.domain([0, yMax]);
-  
-  chart.selectAll("rect")
+ 
+  chart1.selectAll("rect")
+	.data(crime_qtrS)
 	.style("fill", "orange");
 }
 
 function transitionBU() {
-  y.domain([0, y1Max]);
 
-  chart.selectAll("rect")
+  chart1.selectAll("rect")
+	.data(crime_qtrB)
 	.style("fill", "steelblue");
 
 }
