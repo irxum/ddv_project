@@ -123,7 +123,7 @@ chart.attr("width",width + 2*margin)
     .enter().append("rect")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return x(i+1); })
+    .attr("x",function(d,i) { return ((bar_width+gap1)*i); })
     .attr("y",function(d) { return y(d); });
 	
 var xAxis = d3.svg.axis()
@@ -226,17 +226,22 @@ chart2.append("text")
 //}, 2000);
 	
 function changed() {
-  timeout.stop();
   if (this.value === "sv") transitionSV();
   else transitionBU();
 }
 
 function transitionSV() {
   y.domain([0, yMax]);
+  
+  chart1.selectAll("rect")
+	.style("fill", "orange");
 }
 
 function transitionBU() {
   y.domain([0, y1Max]);
+
+  chart1.selectAll("rect")
+	.style("fill", "steelblue");
 
 }
 // ***************************
