@@ -120,10 +120,10 @@ var cr = [ ];
 var crime_qtrB = [3758, 3741, 3812, 3962];
 var crime_qtrS = [4830, 4601, 4656, 4818];
 //document.getElementById("data").innerHTML = crime_qtrB;
+dows = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	
-var qtrs = [1, 2, 3, 4];
 var x = d3.scale.ordinal()
-	.domain(qtrs)
+	.domain(dows)
     .rangeBands([0,width]);
     
 var y = d3.scale.linear()
@@ -149,7 +149,7 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     .ticks(1)
-    .tickValues(qtrs);
+    .tickValues(dows);
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
@@ -172,7 +172,7 @@ chart.append("text")
     .attr("y", height + 1.5*margin)
     .style("font-size", "12px")
     .style("text-anchor", "middle")
-    .text("Quarter of Year");
+    .text("Day of Week");
 // add y-axis label
 //    .attr("transform", "rotate(90)")
 chart.append("text")
