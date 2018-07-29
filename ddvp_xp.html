@@ -30,7 +30,8 @@
     appearance: none;
     width: 100%; /* Full-width */
     height: 25px; /* Specified height */
-    left: 150px;
+    position: absolute;
+    left: -150px;
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -87,14 +88,13 @@ in the year of 2017 </p>
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
-	
-  <input type="range" name="rangeInput" min="1" max="4" onchange="updateTextInput(this.value);">
+  <input type="range" name="rangeInput" min="1" max="4" class = "slider" onchange="updateTextInput(this.value);">
 <input type="text" id="textInput" value="" cols="20" rows="3" style="background-color:#FCF5D8;>
-
 </div>
+					  
+<br>
 <p><font size="3"> Select Quarter by moving Slider</p>
-	<div id="slideVal"> 1 </div><font><br><br>	
-
+<font><br><br>	
 
 <script>
 var margin = 70;
