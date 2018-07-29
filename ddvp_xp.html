@@ -92,8 +92,8 @@ in the year of 2017 </p>
 	<p><br></p>
 
 <form id="form_rb">
-  <label><input type="radio" name="mode" id="rb_sv" value="sv" onchange="sv_changed();">Stolen Vehicles</label><br><br>
-  <label><input type="radio" name="mode" id="rb_bu" value="bu" checked onchange="bu_changed();">Burglaries</label>
+  <label><input type="radio" name="mode" id="rb_sv" value="sv" onchange="rb_changed();">Stolen Vehicles</label><br><br>
+  <label><input type="radio" name="mode" id="rb_bu" value="bu" checked onchange="rb_changed();">Burglaries</label>
 </form>
 
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
@@ -283,8 +283,8 @@ chart2.append("text")
 // ***************************
 // radio button stuff
 	
-var sv_ch = d3.select('#rb_sv').checked;
-var bu_ch = d3.select('#rb_bu').checked;
+//var sv_ch = d3.select('#rb_sv').checked;
+//var bu_ch = d3.select('#rb_bu').checked;
 
 function transitionSV() {
   var curr_qtr = document.getElementById('texts').value; 
@@ -321,17 +321,18 @@ function transitionBU() {
 	
 //d3.select("#rb_bu")
 //    .on("change", changed);
-function bu_changed() {
+function rb_changed() {
+    var bu_ch = d3.select('#rb_bu').checked;
     if (bu_ch == true) transitionBU();
     else transitionSV();
 }
 	
 //d3.select("#rb_sv")
  //   .on("change", changed);
-function sv_changed() {
-    if (sv_ch == true) transitionSV();
-    else transitionBU();
-}
+//function sv_changed() {
+//    if (sv_ch == true) transitionSV();
+  //  else transitionBU();
+//}
 
 // ***************************
 
@@ -340,6 +341,7 @@ function sv_changed() {
 
 function updateText(val) {
     document.getElementById('texts').value=val; 
+    var bu_ch = d3.select('#rb_bu').checked;
     if (bu_ch == true) transitionBU();
     else transitionSV();
 }
