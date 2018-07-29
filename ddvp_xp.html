@@ -22,6 +22,8 @@
 	
 .slidecontainer {
     width: 40%; /* Width of the outside container */
+    position: relative;
+    left: 150px;
 }
 
 /* The slider itself */
@@ -30,8 +32,6 @@
     appearance: none;
     width: 40%; /* Full-width */
     height: 25px; /* Specified height */
-    position: absolute;
-    left: -150px;
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -61,11 +61,7 @@
     cursor: pointer; /* Cursor on hover */
 }	
 
-div.pos_right {
-    position: relative;
-    left: 50px;
-}
-	
+
 </style>
 
 
@@ -92,8 +88,8 @@ in the year of 2017 </p>
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
-  <input type="range" class = "pos_right" name="rangeInput" min="1" max="4" onchange="updateTextInput(this.value);">
-<input type="text" class= "pos_right" id="textInput" value="" cols="10" rows="3" style="background-color:#FCF5D8;>
+  <input type="range" name="rangeInput" min="1" max="4" value="1" onchange="updateTextInput(this.value);">
+<input type="text" id="textInput" value="1" cols="10" rows="3" style="background-color:#FCF5D8;>
 </div>
 					  
 <br>
