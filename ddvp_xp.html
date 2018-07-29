@@ -288,6 +288,7 @@ var bu_ch = document.getElementById('rb_bu').checked;
 
 function transitionSV() {
   var curr_qtr = document.getElementById('texts').value; 
+  bu_ch = false;
  
   chart.selectAll("rect")
 	.data(dow_na_sv[curr_qtr-1])
@@ -304,6 +305,7 @@ function transitionSV() {
 
 function transitionBU() {
   var curr_qtr = document.getElementById('texts').value; 
+  bu_ch = true;
 	
   chart.selectAll("rect")
 	.data(dow_na_bu[curr_qtr-1])
