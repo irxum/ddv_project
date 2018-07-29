@@ -91,9 +91,9 @@ in the year of 2017 </p>
 	<p><br></p>
 	<p><br></p>
 
-<form id="form_rb">
-  <label><input type="radio" name="mode" id="rb_sv" value="sv" onchange="rb_changed();">Stolen Vehicles</label><br><br>
-  <label><input type="radio" name="mode" id="rb_bu" value="bu" checked onchange="rb_changed();">Burglaries</label>
+<form id="form_rb" onchange="rb_changed()'">
+  <label><input type="radio" name="mode" id="rb_sv" value="sv" >Stolen Vehicles</label><br><br>
+  <label><input type="radio" name="mode" id="rb_bu" value="bu" checked >Burglaries</label>
 </form>
 
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
@@ -195,7 +195,7 @@ chart.append("g")
 // add x-axis label
 chart.append("text")
     .attr("x", (width/2) + margin)
-    .attr("y", height + 1.5*margin)
+    .attr("y", 0.5*margin)
     .style("font-size", "12px")
     .style("text-anchor", "middle")
     .text("Day of Week");
@@ -264,7 +264,7 @@ chart2.append("g")
 // add x-axis label
 chart2.append("text")
     .attr("x", (width/2) + margin)
-    .attr("y", height + 1.5*margin)
+    .attr("y", 0.5*margin)
     .style("font-size", "12px")
     .style("text-anchor", "middle")
     .text("Hour of Day");
@@ -284,11 +284,10 @@ chart2.append("text")
 // radio button stuff
 	
 //var sv_ch = d3.select('#rb_sv').checked;
-var bu_ch = document.getElementById('rb_bu').checked;
+//var bu_ch = document.getElementById('rb_bu').checked;
 
 function transitionSV() {
   var curr_qtr = document.getElementById('texts').value; 
-  bu_ch = false;
  
   chart.selectAll("rect")
 	.data(dow_na_sv[curr_qtr-1])
@@ -305,7 +304,7 @@ function transitionSV() {
 
 function transitionBU() {
   var curr_qtr = document.getElementById('texts').value; 
-  bu_ch = true;
+
 	
   chart.selectAll("rect")
 	.data(dow_na_bu[curr_qtr-1])
@@ -324,7 +323,8 @@ function transitionBU() {
 //d3.select("#rb_bu")
 //    .on("change", changed);
 function rb_changed() {
-    if (bu_ch == true) transitionBU();
+    var fval = d3.select('#form_rb').value;
+    if (fval == "bu") transitionBU();
     else transitionSV();
 }
 	
@@ -342,6 +342,7 @@ function rb_changed() {
 
 function updateText(val) {
     document.getElementById('texts').value=val; 
+    var fval = d3.select('#form_rb').value;
     if (bu_ch == true) transitionBU();
     else transitionSV();
 }
