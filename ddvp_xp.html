@@ -117,8 +117,8 @@ var gap2 = 4;
 	
 var cr = [ ];
 	
-var crime_qtrB = [3758, 3741, 3812, 3962];
-var crime_qtrS = [4830, 4601, 4656, 4818];
+var crime_qtrB = dow_na_bu[0];
+var crime_qtrS = dow_na_sv[0];
 //document.getElementById("data").innerHTML = crime_qtrB;
 dows = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	
@@ -189,6 +189,8 @@ chart.append("text")
 
 // ***************************
 // 2nd chart stuff
+var ch2dataB = hod_na_bu[0];
+var ch2dataS = hod_na_sv[0];
 var chart2 = d3.select("#chart2");
 	
 chart2.attr("width",width + 2*margin)
@@ -196,9 +198,9 @@ chart2.attr("width",width + 2*margin)
     .append("g")
         .attr("transform","translate(" + margin + "," + margin + ")")
     .selectAll("rect")
-	.data(crime_qtrS)
+	.data(ch2dataB)
     .enter().append("rect")
-	.attr("transform","translate(" + (gap1/2) + ", " + 0 + ")")
+	.attr("transform","translate(" + (gap2/2) + ", " + 0 + ")")
     .attr("width", bar_width)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
