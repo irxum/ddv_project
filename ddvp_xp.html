@@ -221,7 +221,7 @@ var x2 = d3.scale.ordinal()
     .rangeBands([0,width]);
     
 var y2 = d3.scale.linear()
-	.domain([0,400])
+	.domain([0,420])
     .range([height,0]);
 	
 var chart2 = d3.select("#chart2");
@@ -345,7 +345,7 @@ function rb_changed() {
 function updateText(val) {
     document.getElementById('texts').value=val; 
     var bugch = document.getElementById('rb_bu').checked;
-    if (bugch = true) transitionBU();
+    if (bugch == true) transitionBU();
     else transitionSV();
 }
 
