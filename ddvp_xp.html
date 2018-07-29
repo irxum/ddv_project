@@ -238,7 +238,7 @@ chart2.attr("width",width + 2*margin)
 	.attr("transform","translate(" + (gap2/2) + ", " + 0 + ")")
     .attr("width", bar_width2)
     .attr("height",function(d) { return height - y2(d); })
-    .attr("x",function(d,i) { return x2(i+1); })
+    .attr("x",function(d,i) { return x2(i); })
     .attr("y",function(d) { return y2(d); });
 
 var xAxis2 = d3.svg.axis()
