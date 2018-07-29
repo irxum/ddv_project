@@ -227,6 +227,8 @@ var y2 = d3.scale.linear()
 	
 var chart2 = d3.select("#chart2");
 	
+var bar_width2 = ((width / ch2dataB.length) - gap2);
+	
 chart2.attr("width",width + 2*margin)
     .attr("height",height + 2*margin)
     .append("g")
@@ -235,7 +237,7 @@ chart2.attr("width",width + 2*margin)
 	.data(ch2dataB)
     .enter().append("rect")
 	.attr("transform","translate(" + (gap2/2) + ", " + 0 + ")")
-    .attr("width", bar_width)
+    .attr("width", bar_width2)
     .attr("height",function(d) { return height - y2(d); })
     .attr("x",function(d,i) { return x2(i+1); })
     .attr("y",function(d) { return y2(d); });
