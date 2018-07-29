@@ -87,10 +87,13 @@ in the year of 2017 </p>
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
-  <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
+//  <input type="range" min="1" max="4" value="1" class="slider" id="myRange">
+  <input type="range" name="rangeInput" min="1" max="4" onchange="updateTextInput(this.value);">
+<input type="text" id="textInput" value="">
+
 </div>
 <p><font size="3"> Select Quarter by moving Slider</p>
-<div id="slideVal"> 1 </div><font><br><br>	
+	<div id="slideVal"> 1 </div><font><br><br>	
 
 
 <script>
@@ -262,16 +265,19 @@ function transitionBU() {
 
 	
 // slider stuff
-var slider = document.getElementById("myRange");
-var output = document.getElementById("slideVal");
+	
+//var slider = document.getElementById("myRange");
+//var output = document.getElementById("slideVal");
 //output.innerHTML = slider.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-    output.innerHTML = this.value;
-} 
+//slider.oninput = function() {
+    //output.innerHTML = this.value;
+//} 
 
-
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
 
 
 
