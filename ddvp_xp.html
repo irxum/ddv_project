@@ -21,7 +21,7 @@
 }
 	
 .slidecontainer {
-    width: 300px; /* Width of the outside container */
+    width: 100%; /* Width of the outside container */
     position: relative;
     left: 120px;
 }
@@ -30,7 +30,7 @@
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 40%; /* Full-width */
+    width: 300px; /* Full-width */
     height: 25px; /* Specified height */
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
@@ -88,12 +88,12 @@ in the year of 2017 </p>
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
-  <input type="range" name="rangeInput" min="1" max="4" value="1" width = "300" onchange="updateTextInput(this.value);">
-<input type="text" id="textInput" value="1" width="50" style="background-color:#FCF5D8;">
+  <input type="range" class="slider" name="rangeInput" min="1" max="4" value="1" onchange="updateText(this.value);">
+<input type="text" id="text" value="1" style="background-color:#FCF5D8;">
+<p><font size="3"> Select Quarter by moving Slider</font></p>
 </div>
 					  
 <br>
-<p><font size="3"> Select Quarter by moving Slider</font></p>
 <br>
 
 <script>
