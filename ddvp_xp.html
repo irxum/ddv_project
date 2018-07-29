@@ -284,7 +284,7 @@ chart2.append("text")
 // ***************************
 // radio button stuff
 	
-d3.select("#form_rb")
+d3.select("#rb_bu")
     .on("change", changed);
 function changed() {
     var chval = d3.select('#rb_bu').checked;
@@ -293,7 +293,7 @@ function changed() {
 }
 
 function transitionSV() {
-  var curr_qtr = document.getElementById('texts').value; 
+  var curr_qtr = document.getElementById('texts').value - 1; 
  
   chart.selectAll("rect")
 	.data(dow_na_sv[curr_qtr])
@@ -309,7 +309,7 @@ function transitionSV() {
 }
 
 function transitionBU() {
-  var curr_qtr = document.getElementById('texts').value; 
+  var curr_qtr = document.getElementById('texts').value - 1; 
 	
   chart.selectAll("rect")
 	.data(dow_na_bu[curr_qtr])
