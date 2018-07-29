@@ -343,7 +343,7 @@ function rb_changed() {
 function updateText(val) {
     document.getElementById('texts').value=val; 
     var fval = d3.select('#form_rb').value;
-    if (bu_ch == true) transitionBU();
+    if (fval == "bu") transitionBU();
     else transitionSV();
 }
 
