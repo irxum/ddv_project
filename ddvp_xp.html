@@ -91,7 +91,7 @@ in the year of 2017 </p>
 	<p><br></p>
 	<p><br></p>
 
-<form>
+<form id="form_rb">
   <label><input type="radio" name="mode" id="rb_sv" value="sv">Stolen Vehicles</label><br><br>
   <label><input type="radio" name="mode" id="rd_bu" value="bu" checked>Burglaries</label>
 </form>
@@ -284,7 +284,7 @@ chart2.append("text")
 // ***************************
 // radio button stuff
 	
-d3.select("#rb_sv")
+d3.select("#form_rb")
     .on("change", changed);
 function changed() {
   if (this.value === "sv") transitionSV();
@@ -330,7 +330,7 @@ function transitionBU() {
 
 function updateText(val) {
     document.getElementById('texts').value=val; 
-    var rbval = document.getElementById('rb_sv').val
+    var rbval = d3.select('#form_rb').value;
     if (rbval === "sv") transitionSV();
     else transitionBU();
 }
