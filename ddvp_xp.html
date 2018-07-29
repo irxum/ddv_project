@@ -89,7 +89,7 @@ in the year of 2017 </p>
 
 <div class="slidecontainer">
   <input type="range" class="slider" name="rangeInput" min="1" max="4" value="1" onchange="updateText(this.value);">
-<input type="text" id="text" value="1" style="background-color:#FCF5D8;">
+<input type="text" id="texts" value="1" style="background-color:#FCF5D8;">
 <p><font size="3"> Select Quarter by moving Slider</font></p>
 </div>
 					  
@@ -266,8 +266,8 @@ function transitionBU() {
 	
 // slider stuff
 
-function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
+function updateText(val) {
+          document.getElementById('texts').value=val; 
         }
 
 
