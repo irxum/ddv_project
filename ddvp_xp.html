@@ -292,7 +292,7 @@ function changed() {
 }
 
 function transitionSV() {
-  var curr_qtr = document.getElementById('texts').value=val; 
+  var curr_qtr = document.getElementById('texts').value; 
  
   chart.selectAll("rect")
 	.data(dow_na_sv[curr_qtr])
@@ -308,7 +308,7 @@ function transitionSV() {
 }
 
 function transitionBU() {
-  var curr_qtr = document.getElementById('texts').value=val; 
+  var curr_qtr = document.getElementById('texts').value; 
 	
   chart.selectAll("rect")
 	.data(dow_na_bu[curr_qtr])
@@ -329,8 +329,13 @@ function transitionBU() {
 // slider stuff
 
 function updateText(val) {
-          document.getElementById('texts').value=val; 
-        }
+    document.getElementById('texts').value=val; 
+d3.selectAll("input")
+    .on("change", changed);
+function changed() {
+  if (this.value === "sv") transitionSV();
+  else transitionBU();
+}
 
 // main data stuff
 	
