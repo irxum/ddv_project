@@ -286,6 +286,8 @@ chart2.append("text")
 //var sv_ch = d3.select('#rb_sv').checked;
 //var bu_ch = document.getElementById('rb_bu').checked;
 
+var fval = document.getElementById('form_rb').value;
+
 function transitionSV() {
   var curr_qtr = document.getElementById('texts').value; 
  
@@ -323,7 +325,6 @@ function transitionBU() {
 //d3.select("#rb_bu")
 //    .on("change", changed);
 function rb_changed() {
-    var fval = d3.select('#form_rb').value;
     if (fval == "bu") transitionBU();
     else transitionSV();
 }
@@ -342,7 +343,6 @@ function rb_changed() {
 
 function updateText(val) {
     document.getElementById('texts').value=val; 
-    var fval = d3.select('#form_rb').value;
     if (fval == "bu") transitionBU();
     else transitionSV();
 }
