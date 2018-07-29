@@ -176,7 +176,7 @@ var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
     .ticks(1)
-    .tickValues(hods);
+    .tickValues(dows);
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
@@ -230,16 +230,26 @@ chart2.attr("width",width + 2*margin)
     .attr("height",function(d) { return height - y(d); })
     .attr("x",function(d,i) { return x(i+1); })
     .attr("y",function(d) { return y(d); });
+
+var xAxis2 = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .ticks(1)
+    .tickValues(hods);
+var yAxis2 = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(5);
 	
 chart2.append("g")
     .attr("transform", "translate(" + margin + "," + (height+margin) + ")")
     .attr("class","axis")
-    .call(xAxis);
+    .call(xAxis2);
     
 chart2.append("g")
     .attr("transform", "translate(" + margin + "," + margin + ")")
     .attr("class","axis")
-    .call(yAxis);
+    .call(yAxis2);
 
 // add x-axis label
 chart2.append("text")
