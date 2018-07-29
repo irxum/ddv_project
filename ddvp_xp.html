@@ -300,8 +300,8 @@ function transitionSV() {
 	
   chart2.selectAll("rect")
 	.data(hod_na_sv[curr_qtr-1])
-	.attr("height",function(d) { return height - y(d); })
-	.attr("y",function(d) { return y(d); })
+	.attr("height",function(d) { return height - y2(d); })
+	.attr("y",function(d) { return y2(d); })
 	.style("fill", "orange");
 }
 
@@ -317,8 +317,8 @@ function transitionBU() {
 
   chart2.selectAll("rect")
 	.data(hod_na_bu[curr_qtr-1])
-	.attr("height",function(d) { return height - y(d); })
-	.attr("y",function(d) { return y(d); })
+	.attr("height",function(d) { return height - y2(d); })
+	.attr("y",function(d) { return y2(d); })
 	.style("fill", "steelblue");
 
 }
