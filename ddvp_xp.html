@@ -292,30 +292,32 @@ function changed() {
 }
 
 function transitionSV() {
+  var curr_qtr = document.getElementById('texts').value=val; 
  
   chart.selectAll("rect")
-	.data(crime_qtrS)
+	.data(dow_na_sv[curr_qtr])
 	.attr("height",function(d) { return height - y(d); })
 	.attr("y",function(d) { return y(d); })
 	.style("fill", "orange");
 	
   chart2.selectAll("rect")
-	.data(crime_qtrS)
+	.data(hod_na_sv[curr_qtr])
 	.attr("height",function(d) { return height - y(d); })
 	.attr("y",function(d) { return y(d); })
 	.style("fill", "orange");
 }
 
 function transitionBU() {
-
+  var curr_qtr = document.getElementById('texts').value=val; 
+	
   chart.selectAll("rect")
-	.data(crime_qtrB)
+	.data(dow_na_bu[curr_qtr])
 	.attr("height",function(d) { return height - y(d); })
 	.attr("y",function(d) { return y(d); })
 	.style("fill", "steelblue");
 
   chart2.selectAll("rect")
-	.data(crime_qtrB)
+	.data(hod_na_bu[curr_qtr])
 	.attr("height",function(d) { return height - y(d); })
 	.attr("y",function(d) { return y(d); })
 	.style("fill", "steelblue");
