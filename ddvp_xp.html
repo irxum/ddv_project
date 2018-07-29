@@ -287,8 +287,9 @@ chart2.append("text")
 d3.select("#form_rb")
     .on("change", changed);
 function changed() {
-  if (this.value === "sv") transitionSV();
-  else transitionBU();
+    var chval = d3.select('#rb_bu').checked;
+    if (chval == true) transitionBU();
+    else transitionSV();
 }
 
 function transitionSV() {
@@ -330,9 +331,9 @@ function transitionBU() {
 
 function updateText(val) {
     document.getElementById('texts').value=val; 
-    var rbval = d3.select('#form_rb').value;
-    if (rbval === "sv") transitionSV();
-    else transitionBU();
+    var chval = d3.select('#rb_bu').checked;
+    if (chval == true) transitionBU();
+    else transitionSV();
 }
 
 // main data stuff
