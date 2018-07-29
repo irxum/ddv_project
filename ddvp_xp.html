@@ -60,7 +60,11 @@
     background: #4CAF50; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }	
-	
+
+div.pos_right {
+    position: relative;
+    left: 50px;
+}
 	
 </style>
 
@@ -88,12 +92,12 @@ in the year of 2017 </p>
 <svg class="chart" id="chart1"></svg><svg class="chart" id="chart2"></svg>
 
 <div class="slidecontainer">
-  <input type="range" name="rangeInput" min="1" max="4" onchange="updateTextInput(this.value);">
-<input type="text" id="textInput" value="" cols="20" rows="3" style="background-color:#FCF5D8;>
+  <input type="range" class = "pos_right" name="rangeInput" min="1" max="4" onchange="updateTextInput(this.value);">
+<input type="text" class= "pos_right" id="textInput" value="" cols="10" rows="3" style="background-color:#FCF5D8;>
 </div>
 					  
 <br>
-<p><font size="3"> Select Quarter by moving Slider</p>
+<p><font size="3"><br> Select Quarter by moving Slider</p>
 <font><br><br>	
 
 <script>
