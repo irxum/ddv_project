@@ -216,6 +216,15 @@ chart.append("text")
 // 2nd chart stuff
 var ch2dataB = hod_na_bu[0];
 var ch2dataS = hod_na_sv[0];
+	
+var x2 = d3.scale.ordinal()
+	.domain(hods)
+    .rangeBands([0,width]);
+    
+var y2 = d3.scale.linear()
+	.domain([0,400])
+    .range([height,0]);
+	
 var chart2 = d3.select("#chart2");
 	
 chart2.attr("width",width + 2*margin)
@@ -227,17 +236,17 @@ chart2.attr("width",width + 2*margin)
     .enter().append("rect")
 	.attr("transform","translate(" + (gap2/2) + ", " + 0 + ")")
     .attr("width", bar_width)
-    .attr("height",function(d) { return height - y(d); })
-    .attr("x",function(d,i) { return x(i+1); })
-    .attr("y",function(d) { return y(d); });
+    .attr("height",function(d) { return height - y2(d); })
+    .attr("x",function(d,i) { return x2(i+1); })
+    .attr("y",function(d) { return y2(d); });
 
 var xAxis2 = d3.svg.axis()
-    .scale(x)
+    .scale(x2)
     .orient("bottom")
     .ticks(1)
     .tickValues(hods);
 var yAxis2 = d3.svg.axis()
-    .scale(y)
+    .scale(y2)
     .orient("left")
     .ticks(5);
 	
