@@ -283,13 +283,7 @@ chart2.append("text")
 // ***************************
 // radio button stuff
 	
-d3.select("#rb_bu")
-    .on("change", changed);
-function changed() {
-    var chval = d3.select('#rb_bu').checked;
-    if (chval == true) transitionBU();
-    else transitionSV();
-}
+
 
 function transitionSV() {
   var curr_qtr = document.getElementById('texts').value; 
@@ -323,6 +317,23 @@ function transitionBU() {
 	.style("fill", "steelblue");
 
 }
+	
+d3.select("#rb_bu")
+    .on("change", changed);
+function changed() {
+    var chval = d3.select('#rb_bu').checked;
+    if (chval == true) transitionBU();
+    else transitionSV();
+}
+	
+d3.select("#rb_sv")
+    .on("change", changed);
+function changed() {
+    var chval = d3.select('#rb_sv').checked;
+    if (chval == true) transitionSV();
+    else transitionBU();
+}
+
 // ***************************
 
 	
